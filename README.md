@@ -4,18 +4,30 @@ This repository contains a full Home Assistant custom integration for the **Ener
 
 ---
 
-## 📁 Installation Steps in Home Assistant
+## 📁 Repository & HACS Layout
 
-1. Copy this entire repository folder as `energyface` into your Home Assistant custom components folder:
-   ```text
-   /config/custom_components/energyface/
-   ├── __init__.py
-   ├── config_flow.py
-   ├── const.py
-   ├── manifest.json
-   ├── select.py
-   ├── sensor.py
-   └── strings.json
+The repository is structured for Home Assistant (and HACS compatibility):
+
+```text
+EnergyFaceHomeAsistant/
+├── README.md
+├── home_assistant_integration.md
+└── custom_components/
+    └── energyface/            <-- Domain name
+        ├── __init__.py
+        ├── config_flow.py
+        ├── const.py
+        ├── manifest.json
+        ├── select.py
+        ├── sensor.py
+        └── strings.json
+```
+
+### Installation Steps
+
+1. Copy the `custom_components/energyface` directory into your Home Assistant `/config/custom_components/` directory:
+   ```bash
+   cp -r custom_components/energyface /config/custom_components/
    ```
 2. Restart **Home Assistant**.
 3. In Home Assistant, go to **Settings** -> **Devices & Services** -> **Add Integration**.

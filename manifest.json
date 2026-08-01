@@ -1,0 +1,11 @@
+{
+  "domain": "energyface",
+  "name": "EnergyFace Solar Controller",
+  "codeowners": ["@patrick115"],
+  "config_flow": true,
+  "documentation": "https://github.com/patrick115/EnergyFaceHomeAsistant",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/patrick115/EnergyFaceHomeAsistant/issues",
+  "requirements": ["aiohttp"],
+  "version": "1.0.0"
+}

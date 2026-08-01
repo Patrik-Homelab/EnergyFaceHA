@@ -1,0 +1,19 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "EnergyFace Solar Controller",
+        "description": "Configure your EnergyFace controller IP address.",
+        "data": {
+          "host": "IP Address"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to EnergyFace WebSocket (port 81)."
+    },
+    "abort": {
+      "already_configured": "Device is already configured"
+    }
+  }
+}

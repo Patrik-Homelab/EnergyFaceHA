@@ -13,8 +13,9 @@ EnergyFaceHomeAsistant/
 ├── README.md
 ├── home_assistant_integration.md
 └── custom_components/
-    └── energyface/            <-- Domain name
+    └── energyfaceha/            <-- Domain name
         ├── __init__.py
+        ├── binary_sensor.py
         ├── config_flow.py
         ├── const.py
         ├── manifest.json
@@ -25,9 +26,9 @@ EnergyFaceHomeAsistant/
 
 ### Installation Steps
 
-1. Copy the `custom_components/energyface` directory into your Home Assistant `/config/custom_components/` directory:
+1. Copy the `custom_components/energyfaceha` directory into your Home Assistant `/config/custom_components/` directory:
    ```bash
-   cp -r custom_components/energyface /config/custom_components/
+   cp -r custom_components/energyfaceha /config/custom_components/
    ```
 2. Restart **Home Assistant**.
 3. In Home Assistant, go to **Settings** -> **Devices & Services** -> **Add Integration**.
@@ -44,7 +45,9 @@ EnergyFaceHomeAsistant/
 | `sensor.energyface_potrubi_solaru` | Pipe | Live Solar Pipe Temp (°C) |
 | `sensor.energyface_bojler_nahore` | Boiler Top | Live Boiler Top Temp (°C) |
 | `sensor.energyface_bojler_dole` | Boiler Bottom | Live Boiler Bottom Temp (°C) |
-| `select.energyface_solarni_cerpadlo_rezim` | Solární čerpadlo (OUT2) | Select state: `AUTO`, `ON`, `OFF` |
+| `binary_sensor.energyface_solarni_cerpadlo_stav` | Solární čerpadlo stav | Physical relay status: `ON` (Running) / `OFF` (Idle) |
+| `select.energyface_solarni_cerpadlo_rezim` | Solární čerpadlo režim | Mode command selector: `AUTO`, `ON`, `OFF` |
+
 
 ---
 

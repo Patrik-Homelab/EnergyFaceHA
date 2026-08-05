@@ -20,8 +20,8 @@ Cidla#45#0#24.9 °C#NaN °C#71.8 °C#0.0 °C#...#48.3 °C#65.0 °C#...#Nečinný
 | ----------- | -------------------- | --------------- | ------------------------------------ |
 | `3`         | Kolektor             | `24.9 °C`       | `sensor.solar_collector_temperature` |
 | `5`         | Bojler Nahoře        | `71.8 °C`       | `sensor.boiler_top_temperature`      |
-| `11`        | Bojler Dole          | `48.3 °C`       | `sensor.boiler_bottom_temperature`   |
-| `12`        | Potrubí Soláru       | `65.0 °C`       | `sensor.solar_pipe_temperature`      |
+| `11`        | Potrubí Soláru       | `59.8 °C`       | `sensor.solar_pipe_temperature`      |
+| `12`        | Bojler Dole          | `69.3 °C`       | `sensor.boiler_bottom_temperature`   |
 | `22`        | Stav Čerpadla (OUT2) | `1` / `0`       | `binary_sensor.solar_pump_active`    |
 
 ### Direct Hardware Relay Commands

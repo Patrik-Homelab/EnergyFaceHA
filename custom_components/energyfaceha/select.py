@@ -59,11 +59,18 @@ class EnergyFacePumpSelect(CoordinatorEntity[EnergyFaceDataCoordinator], SelectE
             model="EFx20 / SDS Micro",
         )
 
+    @property
+    def current_option(self) -> str:
+        """Return the current selected pump mode."""
+        return self.coordinator.data.get("pump2_mode", self._attr_current_option or "AUTO")
+
     async def async_select_option(self, option: str) -> None:
         """Change the selected option and trigger relay command over WebSocket."""
         cmd = PUMP_MODES.get(option)
         if cmd:
             _LOGGER.info("Sending pump mode selection '%s' (%s) to controller", option, cmd)
-            await self.coordinator.send_command(cmd)
             self._attr_current_option = option
+            self.coordinator.data["pump2_mode"] = option
             self.async_write_ha_state()
+            await self.coordinator.send_command(cmd)
+            await self.coordinator.send_command("p")

@@ -103,6 +103,16 @@ class TestEnergyFaceParsing(unittest.TestCase):
         self.assertTrue(res_running)
         self.assertEqual(self.coordinator.data.get("pump2_active"), True)
 
+    def test_multiline_telemetry(self):
+        raw_combined = (
+            "Cidla#45#0#62.5 °C#NaN °C#71.8 °C#0.0 °C#0#0#0#0#65.0 °C#48.3 °C#0#0#0#0#0#0#0#0#Běží.#1\n"
+            "Nastavení#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#b14\n"
+        )
+        res = self.coordinator._parse_telemetry(raw_combined)
+        self.assertTrue(res)
+        self.assertEqual(self.coordinator.data.get("solar_collector"), 62.5)
+        self.assertEqual(self.coordinator.data.get("pump2_mode"), "ON")
+
 
 if __name__ == "__main__":
     unittest.main()
